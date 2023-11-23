@@ -1,0 +1,17 @@
+# Create a folder with the name of all the genes that you BLASTED against 
+
+ls > files_name.txt
+
+
+# Compile all the BLASTED genes in one dataset 
+
+while read -r line; do
+	cat <limbless_genes>/${line}.fasta <genes_*>/${line}/*.fasta > <all_genes>/${line}.fasta 
+	done < <genes.txt>
+
+
+
+
+
+
+
