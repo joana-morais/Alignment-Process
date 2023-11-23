@@ -1,6 +1,14 @@
-Download NCBI Datasets: 
+#Download NCBI Datasets: 
 
 conda create -n datasets -c conda-forge ncbi-datasets-cli tree -y
 conda activate datasets
 datasets 
  
+#Find the species you are looking for. There are two ways:
+
+datasets download genome taxon "species name" --filename filename_ref.zip
+datasets download genome taxon "calyptommatus sinebrachiatus" --filename filename_ref.zip
+
+#or
+
+datasets download genome accession GCA_003586115.2  
