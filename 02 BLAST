@@ -1,0 +1,12 @@
+# Create a BLAST dataset
+
+makeblastdb -in <reference.fa> -dbtype nucl -parse_seqids -out <database_name> -title "Database title"
+
+
+# Create a BLAST loop
+
+for i in *.fasta; do 
+out=$(echo ${i}|sed "s/.fasta//")
+mkdir ${out}
+        blastn -query ${i} -db /Users/Beta/Desktop/00_DOUTORADO/00_Project/01_Genomes/Genomes/GCA_022412395.1_calyp_genoma/calyp_genoma -evalue 1e-5 -outfmt '6 Subject sseqid sseq evalue'|awk 'BEGIN { OFS = "\n" } { print "> CalypSin"$1"_"$3, $2 }' > ${out}/CalypSin.fasta 
+        done
