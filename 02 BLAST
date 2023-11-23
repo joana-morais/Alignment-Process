@@ -19,3 +19,6 @@ If you have a MacOS, you can install with Homebrew:
         eval "$(homebrew/bin/brew shellenv)"
         brew update --force --quiet
         chmod -R go-w "$(brew --prefix)/share/zsh"
+
+## Important:
+Create a folder with the genes that you want to blast and add them to the folder you'll do your BLAST. 
